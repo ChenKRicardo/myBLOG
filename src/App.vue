@@ -18,7 +18,7 @@ const testData: ColumnProps[] = [
     id: 2,
     title: 'test2',
     description: '这是第二个测试',
-    avator: './assets/hutao.gif'
+    avator: '/images/hutao.gif'
   },
   {
     id: 2,

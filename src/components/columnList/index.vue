@@ -40,7 +40,7 @@ export default defineComponent({
       return props.list.map((column) => {
         if (!column.avator) {
           const newColumn = column
-          newColumn.avator = '@/assets/logo.png'
+          newColumn.avator = '/images/hutao.gif'
         }
         return column
       })
