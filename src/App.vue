@@ -1,51 +1,30 @@
 <template>
   <div class="container">
     <global-header :user="user"></global-header>
-    <!-- <column-list :list="list"></column-list> -->
-    <login-page></login-page>
+    <router-view></router-view>
+    <!-- <column-list></column-list> -->
+    <global-footer></global-footer>
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import ColumnList, { ColumnProps } from './components/ColumnList/index.vue'
+import { useRoute } from 'vue-router'
 import GlobalHeader, { UserProps } from './components/Header/index.vue'
-import LoginPage from './pages/Register/index.vue'
+import GlobalFooter from './components/Footer/index.vue'
+// import ColumnList from './pages/ColumnList/index.vue'
 
 const testUser: UserProps = {
-  isLogin: true,
+  isLogin: false,
   name: 'Ricardo'
 }
-const testData: ColumnProps[] = [
-  {
-    id: 1,
-    title: 'test1',
-    description: '这是第一个测试'
-  },
-  {
-    id: 2,
-    title: 'test2',
-    description: '这是第二个测试',
-    avator: '/images/hutao.gif'
-  },
-  {
-    id: 2,
-    title: 'test2',
-    description: '这是第二个测试'
-  },
-  {
-    id: 2,
-    title: 'test2',
-    description: '这是第三个测试'
-  }
-]
 export default defineComponent({
   name: 'App',
-  components: { ColumnList, GlobalHeader, LoginPage },
+  components: { GlobalHeader, GlobalFooter },
   setup() {
+    const useroute = useRoute()
     return {
-      list: testData,
-      user: testUser
+      user: testUser,
+      useroute
     }
   }
 })

@@ -28,8 +28,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import validateInput, { RulesProp } from '@/components/ValidateForm/ValidateInput/index.vue'
-import validateForm from '@/components/ValidateForm/index.vue'
+import validateInput, { RulesProp } from '../../components/ValidateForm/ValidateInput/index.vue'
+import validateForm from '../../components/ValidateForm/index.vue'
 
 export default defineComponent({
   name: 'RegisterPage',

@@ -1,12 +1,13 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig } from 'vite'
+// eslint-disable-next-line import/no-extraneous-dependencies
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
+import { resolve } from 'path'
 
 export default defineConfig({
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, './'),
-      '@': path.resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'src')
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
   },
