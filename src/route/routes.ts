@@ -14,15 +14,18 @@ export default [
     component: () => import(`../pages/Register/index.vue`)
   },
   {
-    path: '/columnList',
-    name: 'columnList',
-    component: () => import(`../pages/ColumnList/index.vue`),
-    children: [
-      {
-        path: 'columnDeatil/:id',
-        name: 'columnDeatil',
-        component: () => import(`../pages/ColumnList/ColumnDetail/index.vue`)
-      }
-    ]
+    path: '/login',
+    name: 'login',
+    component: () => import(`../pages/Login/index.vue`)
+  },
+  {
+    path: '/column',
+    name: 'column',
+    component: () => import(`../pages/Column/index.vue`)
+  },
+  {
+    path: '/columnDetail/:id',
+    name: 'columnDetail',
+    component: () => import(`../pages/Column/ColumnDetail/index.vue`)
   }
 ]

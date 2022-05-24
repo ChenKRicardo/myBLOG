@@ -22,12 +22,13 @@
         <label class="form-check-label" for="exampleCheck1">记住我</label>
       </div>
     </template>
-    <template #submit> </template>
+    <template #submit></template>
   </validate-form>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
 import validateInput, { RulesProp } from '../../components/ValidateForm/ValidateInput/index.vue'
 import validateForm from '../../components/ValidateForm/index.vue'
 
@@ -43,8 +44,11 @@ export default defineComponent({
       { type: 'required', message: '密码不能为空' },
       { type: 'password', message: '密码必须是6-16位字母和数字组合' }
     ]
-    const onFormSubmit = (value: boolean) => {
-      console.log(value)
+    const router = useRouter()
+    const onFormSubmit = (result: boolean) => {
+      if (result) {
+        router.push({ name: 'login' })
+      }
     }
     return {
       emailRules,

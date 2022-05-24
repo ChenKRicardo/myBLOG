@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, onUnmounted } from 'vue'
+import { defineComponent, onUnmounted } from 'vue'
 import emitter from '@/utils/eventBus'
 
 export default defineComponent({
