@@ -36,6 +36,18 @@ export const testData: ColumnProps[] = [
     title: 'test4',
     description: '这是第四个测试',
     avator: '/images/hutao.gif'
+  },
+  {
+    id: 5,
+    title: 'test4',
+    description: '这是第四个测试',
+    avator: '/images/hutao.gif'
+  },
+  {
+    id: 6,
+    title: 'test4',
+    description: '这是第四个测试',
+    avator: '/images/hutao.gif'
   }
 ]
 export const testPosts: PostProps[] = [

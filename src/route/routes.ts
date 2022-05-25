@@ -19,11 +19,6 @@ export default [
     component: () => import(`../pages/Login/index.vue`)
   },
   {
-    path: '/column',
-    name: 'column',
-    component: () => import(`../pages/Column/index.vue`)
-  },
-  {
     path: '/columnDetail/:id',
     name: 'columnDetail',
     component: () => import(`../pages/Column/ColumnDetail/index.vue`)

@@ -16,20 +16,23 @@
         </div>
       </div>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, reactive } from 'vue'
-import { testData } from '@/pages/Column/testData'
+import { computed, defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ColumnList',
-  setup() {
-    const test = reactive(testData)
+  name: 'ColumnPage',
+  props: {
+    list: {
+      type: Array as PropType<ColumnProps[]>,
+      required: true
+    }
+  },
+  setup(props) {
     const columnList = computed(() => {
-      return test.map((column) => {
+      return props.list.map((column) => {
         if (!column.avator) {
           const newColumn = column
           newColumn.avator = '/images/hutao.gif'

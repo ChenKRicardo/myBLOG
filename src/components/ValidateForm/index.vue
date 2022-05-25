@@ -20,9 +20,7 @@ export default defineComponent({
     const submitForm = () => {
       emit('form-submit', true)
     }
-    emitter.on('form-item-created', (test: string) => {
-      console.log(test)
-    })
+    // emitter.on('form-item-created', (test: string) => {})
     onUnmounted(() => {
       emitter.off('form-item-created')
     })
