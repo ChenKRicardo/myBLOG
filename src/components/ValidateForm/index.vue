@@ -1,7 +1,7 @@
 <template>
   <form class="validate-form-container">
     <slot name="input"></slot>
-    <div class="sumit-area" @click.prevent="submitForm">
+    <div class="submit-area" @click.prevent="submitForm">
       <slot name="submit">
         <button type="submit" class="btn btn-primary">注册</button>
       </slot>
@@ -20,7 +20,9 @@ export default defineComponent({
     const submitForm = () => {
       emit('form-submit', true)
     }
-    // emitter.on('form-item-created', (test: string) => {})
+    // emitter.on('form-item-created', (test: string) => {
+    //   console.log(test)
+    // })
     onUnmounted(() => {
       emitter.off('form-item-created')
     })

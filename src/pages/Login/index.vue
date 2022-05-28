@@ -34,7 +34,6 @@ import { useRouter } from 'vue-router'
 import validateInput, { RulesProp } from '../../components/ValidateForm/ValidateInput/index.vue'
 import validateForm from '../../components/ValidateForm/index.vue'
 import { useUserStroe } from '@/stroe/user'
-// import emitter from '@/utils/eventBus'
 
 export default defineComponent({
   name: 'RegisterPage',

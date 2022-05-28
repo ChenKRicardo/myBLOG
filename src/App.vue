@@ -2,7 +2,6 @@
   <div class="container">
     <global-header></global-header>
     <router-view></router-view>
-    <!-- <column-list></column-list> -->
     <global-footer></global-footer>
   </div>
 </template>

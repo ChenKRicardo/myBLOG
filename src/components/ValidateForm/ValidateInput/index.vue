@@ -1,6 +1,7 @@
 <template>
   <div class="validate-input-conatiner pb-3">
     <input
+      v-if="tag !== 'textarea'"
       class="form-control"
       :class="{ 'is-invalid': inputRef.error }"
       id="exampleInputEmail1"
@@ -9,6 +10,16 @@
       @blur="validateInput"
       v-bind="$attrs"
     />
+    <textarea
+      v-else
+      class="form-control"
+      :class="{ 'is-invalid': inputRef.error }"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      v-model="inputRef.val"
+      @blur="validateInput"
+      v-bind="$attrs"
+    ></textarea>
     <div class="form-text" :class="{ 'invalid-feedback': inputRef.error }" v-if="inputRef.error">
       {{ inputRef.message }}
     </div>
@@ -23,11 +34,16 @@ interface RuleProp {
   type: 'required' | 'email' | 'password'
   message: string
 }
+export type TagType = 'input' | 'textarea'
 export type RulesProp = RuleProp[]
 export default defineComponent({
   name: 'validateInput',
   props: {
-    rules: Array as PropType<RulesProp>
+    rules: Array as PropType<RulesProp>,
+    tag: {
+      type: String as PropType<TagType>,
+      default: 'input'
+    }
   },
   inheritAttrs: false,
   setup(props) {
@@ -62,7 +78,7 @@ export default defineComponent({
       }
     }
     onMounted(() => {
-      emitter.emit('form-item-created', '11tyr')
+      emitter.emit('form-item-created')
     })
     return {
       inputRef,

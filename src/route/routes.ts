@@ -22,5 +22,10 @@ export default [
     path: '/columnDetail/:id',
     name: 'columnDetail',
     component: () => import(`../pages/Column/ColumnDetail/index.vue`)
+  },
+  {
+    path: '/createArticle',
+    name: 'createArticle',
+    component: () => import(`../pages/CreateArticle/index.vue`)
   }
 ]
