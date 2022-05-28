@@ -11,7 +11,7 @@ export interface UserProps {
 export const useUserStroe = defineStore('user', {
   state: () => {
     return {
-      user: { islogin: true, name: 'RicardoChen', columnId: 1 }
+      user: { islogin: true, name: 'RicardoChen', columnId: 0 }
     }
   },
   actions: {

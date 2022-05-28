@@ -26,6 +26,7 @@ export default [
   {
     path: '/createArticle',
     name: 'createArticle',
-    component: () => import(`../pages/CreateArticle/index.vue`)
+    component: () => import(`../pages/CreateArticle/index.vue`),
+    meta: { requireLogin: true }
   }
 ]
